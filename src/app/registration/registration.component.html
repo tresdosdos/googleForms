@@ -1,0 +1,10 @@
+<form [formGroup]="registrationFrom" (ngSubmit)="onSubmit(registrationFrom)">
+  <input formControlName="name" placeholder="Your name">
+  <input formControlName="email" placeholder="Your email">
+  <input formControlName="password" placeholder="Your password">
+  <input formControlName="cpassword" placeholder="Confirm password">
+
+  <button type="submit">Send</button>
+</form>
+
+<button (click)="redirect()">Go to questionCreator</button>

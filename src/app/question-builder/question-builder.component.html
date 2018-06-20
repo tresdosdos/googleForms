@@ -1,0 +1,16 @@
+<input type="number" placeholder="Number of questions?" [(ngModel)]="countOfQuestions">
+<button (click)="check()">Check</button>
+
+      <form [formGroup]="questionCreatorFrom" (ngSubmit)="onSubmit(questionCreatorFrom)" >
+      <input formControlName="type" placeholder="{{activeQuestion.type}}" [(ngModel)]="activeQuestion.type">
+      <input formControlName="text" placeholder="{{activeQuestion.text}}" [(ngModel)]="activeQuestion.text">
+      <input formControlName="answer" placeholder="{{activeQuestion.answer}}" [(ngModel)]="activeQuestion.answer">
+        <button type="submit" *ngIf="countOfQuestions">Send</button>
+      </form>
+    <button>Send all</button>
+<div>
+  Count: {{ count }}
+  <button (click)="increment()">+</button>
+  <button (click)="decrement()">-</button>
+</div>
+<button (click)="check()">Check</button>
