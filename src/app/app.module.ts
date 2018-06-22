@@ -6,8 +6,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { QuestionBuilderComponent } from './question-builder/question-builder.component';
 import { AppRoutingModule } from './app-routing.module';
-import {CounterActions} from './app.actions';
-import { combineReducers } from './reducers';
 import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -24,15 +22,8 @@ import { HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     NgReduxModule
   ],
-  providers: [CounterActions, HttpClientModule],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<UserState>) {
-    // Tell @angular-redux/store about our rootReducer and our initial state.
-    // It will use this to create a redux store for us and wire up all the
-    // events.
-    ngRedux.configureStore(
-      combineReducers);
-  }
 }

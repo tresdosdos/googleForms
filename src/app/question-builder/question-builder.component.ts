@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import { NgRedux } from '@angular-redux/store'; // <- New
-import { CounterActions } from '../app.actions'; // <- New
-import {UserState} from "../../store";
-import {HttpClient} from "@angular/common/http"; // <- New
+
 @Component({
   selector: 'app-question-builder',
   templateUrl: './question-builder.component.html',
@@ -12,7 +10,7 @@ import {HttpClient} from "@angular/common/http"; // <- New
 })
 export class QuestionBuilderComponent implements OnInit {
 
-  questionCreatorFrom : FormGroup;
+  questionCreatorFrom: FormGroup;
   countOfQuestions: number;
   arrayOfQuestions = {
       'author': 'lox',
@@ -25,16 +23,13 @@ export class QuestionBuilderComponent implements OnInit {
       ]
     }
   ;
-  paramsId : number;
+  paramsId: number;
   activeQuestion = this.arrayOfQuestions.questions[0];
   author: any;
  title;
  answers;
  rightAnswer;
-  constructor(private fb: FormBuilder,private activateRoute: ActivatedRoute,private router : Router,
-              private ngRedux: NgRedux<UserState>, // <- New
-               private actions: CounterActions,
-              private http: HttpClient) {
+  constructor(private fb: FormBuilder, private activateRoute: ActivatedRoute, private router: Router) {
     /*ngRedux.select<any>('author') // <- New
     .subscribe(newCount => this.author = newCount);
     ngRedux.select<any>('questions') // <- New
