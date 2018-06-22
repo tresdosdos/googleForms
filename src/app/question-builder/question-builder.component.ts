@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
-import { NgRedux } from '@angular-redux/store'; // <- New
+import { NgRedux } from '@angular-redux/store';
+import {HttpClientModule} from '@angular/common/http'; // <- New
 
 @Component({
   selector: 'app-question-builder',
@@ -29,7 +30,7 @@ export class QuestionBuilderComponent implements OnInit {
  title;
  answers;
  rightAnswer;
-  constructor(private fb: FormBuilder, private activateRoute: ActivatedRoute, private router: Router) {
+  constructor(private fb: FormBuilder, private activateRoute: ActivatedRoute, private router: Router, private http: HttpClientModule) {
     /*ngRedux.select<any>('author') // <- New
     .subscribe(newCount => this.author = newCount);
     ngRedux.select<any>('questions') // <- New
@@ -48,13 +49,6 @@ export class QuestionBuilderComponent implements OnInit {
     });
   }
 
-  increment() {
-    this.ngRedux.dispatch(this.actions.increment()); // <- New
-  }
-
-  decrement() {
-    this.ngRedux.dispatch(this.actions.decrement()); // <- New
-  }
   check(){
 
     const data = {
@@ -72,7 +66,7 @@ export class QuestionBuilderComponent implements OnInit {
         }
       ]
     };
-    this.http.post<any>('https://survey-forms.herokuapp.com/addForm', data).subscribe(res => console.log(res));
+
     console.log(1);
   }
   onSubmit(form: FormGroup) {
