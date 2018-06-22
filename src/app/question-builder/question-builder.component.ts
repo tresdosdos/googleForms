@@ -85,8 +85,7 @@ export class QuestionBuilderComponent implements OnInit {
       this.paramsId = Number(Number(this.paramsId) + 1);
       this.activeQuestion = this.arrayOfQuestions[this.paramsId];
       this.router.navigate([`/question/${this.paramsId}`]);
-    }
-    else {
+    } else {
       console.log('No more questions');
     }
     this.arrayOfQuestions.questions.push(

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RegService} from "../reg.service";
+import {RegService} from '../reg.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,8 +9,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  registrationFrom : FormGroup;
-  constructor(public reg: RegService,private fb: FormBuilder,private router : Router) { }
+  registrationFrom: FormGroup;
+  constructor(public reg: RegService,
+              private fb: FormBuilder,
+              private router: Router) { }
 
   ngOnInit() {
     this.registrationFrom = this.fb.group({
@@ -27,7 +29,7 @@ export class RegistrationComponent implements OnInit {
     console.log('Message', form.value.password);
     console.log('Message', form.value.cpassword);
   }
-  redirect(){
+  redirect() {
     this.router.navigate(['/question/0']);
   }
 }
