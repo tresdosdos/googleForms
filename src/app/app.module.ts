@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { QuestionBuilderComponent } from './question-builder/question-builder.component';
-import { AppRoutingModule } from './/app-routing.module';
-import {CounterActions} from "./app.actions";
-import { rootReducer, UserState, INITIAL_STATE } from '../store';
-import { HttpClientModule} from "@angular/common/http";
+import { AppRoutingModule } from './app-routing.module';
+import {CounterActions} from './app.actions';
+import { combineReducers } from './reducers';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     NgReduxModule
   ],
-  providers: [CounterActions,HttpClientModule],
+  providers: [CounterActions, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -33,7 +33,6 @@ export class AppModule {
     // It will use this to create a redux store for us and wire up all the
     // events.
     ngRedux.configureStore(
-      rootReducer,
-      INITIAL_STATE);
+      combineReducers);
   }
 }

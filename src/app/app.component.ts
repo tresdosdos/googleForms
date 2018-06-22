@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgRedux } from '@angular-redux/store'; // <- New
 import { CounterActions } from './app.actions'; // <- New
-import {UserState} from "../store"; // <- New
+import { UserState } from '../store'; // <- New
 
 @Component({
   selector: 'app-root',
@@ -31,7 +31,7 @@ export class AppComponent {
     this.ngRedux.dispatch(this.actions.decrement()); // <- New
   }
   check(){
-    console.log(this.count)
-    console.log(this.question)
+    console.log(this.count);
+    console.log(this.question);
   }
 }
