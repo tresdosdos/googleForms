@@ -49,7 +49,7 @@ export class QuestionBuilderComponent implements OnInit {
     });
   }
 
-  check(){
+  check() {
 
     const data = {
       author: 'lop',
@@ -70,7 +70,7 @@ export class QuestionBuilderComponent implements OnInit {
     console.log(1);
   }
   onSubmit(form: FormGroup) {
-    if(this.paramsId <= this.countOfQuestions) {
+    if (this.paramsId <= this.countOfQuestions) {
       this.paramsId = Number(Number(this.paramsId) + 1);
       this.activeQuestion = this.arrayOfQuestions[this.paramsId];
       this.router.navigate([`/question/${this.paramsId}`]);

@@ -1,10 +1,6 @@
-<form [formGroup]="registrationFrom" (ngSubmit)="onSubmit(registrationFrom)">
-  <input formControlName="name" placeholder="Your name">
-  <input formControlName="email" placeholder="Your email">
-  <input formControlName="password" placeholder="Your password">
-  <input formControlName="cpassword" placeholder="Confirm password">
 
-  <button type="submit">Send</button>
-</form>
-
-<button (click)="redirect()">Go to questionCreator</button>
+<div class="buttonForActions">
+  <button mat-button (click)="openDialogRegistration()"><h1>SingUp</h1></button>
+  <button mat-button (click)="openDialogAuth()"><h1>SingIn</h1></button>
+  <button mat-button (click)="redirect()"><h2>Go to questionCreator</h2></button>
+</div>

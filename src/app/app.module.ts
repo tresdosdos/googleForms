@@ -7,12 +7,18 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { QuestionBuilderComponent } from './question-builder/question-builder.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule} from '@angular/material';
+import { UserComponent } from './user/user.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    QuestionBuilderComponent
+    QuestionBuilderComponent,
+    UserComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -20,10 +26,16 @@ import { HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgReduxModule
+    NgReduxModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [UserComponent, AuthComponent]
 })
 export class AppModule {
 }
