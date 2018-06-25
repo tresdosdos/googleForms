@@ -50,7 +50,6 @@ export class QuestionBuilderComponent implements OnInit {
   }
 
   check() {
-
     const data = {
       author: 'lop',
       questions: [

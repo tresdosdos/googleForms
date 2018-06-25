@@ -1,6 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {UserComponent} from '../user/user.component';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegService} from '../reg.service';
 
@@ -11,9 +10,8 @@ import {RegService} from '../reg.service';
 })
 export class AuthComponent implements OnInit {
   registrationFrom: FormGroup;
-  constructor(public registration: RegService, private fb: FormBuilder,
-              public dialogRef: MatDialogRef<UserComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(public registration: RegService,
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.registrationFrom = this.fb.group({
