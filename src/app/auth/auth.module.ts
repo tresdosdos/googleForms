@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { SingInComponent } from './sing-in/sing-in.component';
-import { SingUpComponent } from './sing-up/sing-up.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AuthButtonsComponent } from './auth-buttons/auth-buttons.component';
-import {MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule} from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { AuthComponent } from './auth.component';
 
 @NgModule({
   imports: [
@@ -17,9 +17,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
   ],
-  declarations: [SingInComponent, SingUpComponent, AuthButtonsComponent],
-  entryComponents: [SingInComponent]
+  declarations: [SignInComponent, SignUpComponent, AuthButtonsComponent, AuthComponent],
+  exports: [AuthComponent],
+  entryComponents: [SignInComponent, SignUpComponent]
 })
 export class AuthModule { }

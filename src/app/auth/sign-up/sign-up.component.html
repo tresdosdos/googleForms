@@ -1,0 +1,6 @@
+<form [formGroup]="registrationFrom" (ngSubmit)="onSubmit(registrationFrom)" class="form__sign-up">
+  <input class="form__input"  formControlName="name" placeholder="Your name">
+  <input class="form__input" type="password" formControlName="password" placeholder="Your password">
+  <input class="form__input" type="password" formControlName="compPassword" placeholder="Confirm password">
+  <button mat-button type="submit">Send</button>
+</form>

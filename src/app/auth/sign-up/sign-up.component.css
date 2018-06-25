@@ -1,0 +1,13 @@
+.form__sign-up{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30vh;
+  width: 40vh;
+}
+
+.form__input{
+  width: 100%;
+  height: 30px;
+}

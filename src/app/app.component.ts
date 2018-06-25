@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NgRedux } from '@angular-redux/store'; // <- New
-
 
 @Component({
   selector: 'app-root',

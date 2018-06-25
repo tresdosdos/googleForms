@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material';
-import {AuthComponent} from '../auth.component';
-import {SingInComponent} from '../sing-in/sing-in.component';
+import { MatDialog } from '@angular/material';
+import { SignInComponent } from '../sign-in/sign-in.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: 'app-auth-buttons',
@@ -11,11 +11,12 @@ import {SingInComponent} from '../sing-in/sing-in.component';
 export class AuthButtonsComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
-
-  ngOnInit() {
-    this.dialog.open(SingInComponent);
+  signIn() {
+    this.dialog.open(SignInComponent);
   }
-/*
-this.dialog.open(AuthComponent);
- */
+  signUp() {
+    this.dialog.open(SignUpComponent);
+  }
+  ngOnInit() {
+  }
 }
